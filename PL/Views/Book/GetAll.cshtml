@@ -1,0 +1,54 @@
+﻿@model ML.Book
+@{
+    ViewData["Title"] = "GetAll";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    .card {
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        transition: box-shadow 0.3s ease-in-out;
+    }
+
+    .card:hover {
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 1);
+    }
+</style>
+
+<div class="container-fluid">
+    <div class="row">
+        <h2 style="text-align:center"><strong>LIBROS</strong></h2>
+        <div class="col-md-1">
+            @Html.ActionLink("", "FormAdd", "Book", htmlAttributes: new { @class = "btn btn-success bi bi-file-plus-fill" })
+        </div>
+    </div>
+
+    <hr />
+
+    <div class="row">
+        @foreach (ML.Book book in Model.Bookss)
+        {
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-header bg-primary text-white">
+                        <h5 class="card-title" style="text-align:center"><strong>@book.BookName</strong></h5>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">Id: @book.IdBook</p>
+                        <p class="card-text">Autor: @book.Author</p>
+                        <p class="card-text">Fecha de Publicación: @book.ReleaseDate</p>
+                    </div>
+                    <div class="card-footer d-flex justify-content-between">
+                        <a class="btn btn-warning bi bi-pencil-fill" href="@Url.Action("FormUpdate", "Book", new { IdBook = book.IdBook })"></a>
+                        <a class="btn btn-danger bi bi-file-x-fill" href="@Url.Action("Delete", "Book", new { BookName = book.BookName })" onclick="return confirm('¿Estás seguro que deseas eliminar este registro?');"></a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+
+
+</div>
+
+
+

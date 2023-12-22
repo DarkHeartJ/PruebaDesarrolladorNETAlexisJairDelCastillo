@@ -1,0 +1,289 @@
+{
+	"info": {
+		"_postman_id": "23bcce9a-85c4-49a6-8111-47012d49494d",
+		"name": "Books",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GetAll",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5293/api/book/getall",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5293",
+					"path": [
+						"api",
+						"book",
+						"getall"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetByAuthor",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5293/api/book/getbyauthor/George%20R.R.%20Martin",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5293",
+					"path": [
+						"api",
+						"book",
+						"getbyauthor",
+						"George%20R.R.%20Martin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetByBookName",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5293/api/book/getbybookname/Strange%20Case%20of%20Dr%20Jekyll%20and%20Mr%20Hyde",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5293",
+					"path": [
+						"api",
+						"book",
+						"getbybookname",
+						"Strange%20Case%20of%20Dr%20Jekyll%20and%20Mr%20Hyde"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetByReleaseDate",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5293/api/book/getbyreleasedate/2011-09-27",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5293",
+					"path": [
+						"api",
+						"book",
+						"getbyreleasedate",
+						"2011-09-27"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"IdBook\": 14,\r\n  \"BookName\": \"Norwegian Wood\",\r\n  \"Author\": \"Haruki Murakami\",\r\n  \"ReleaseDate\": \"1987-08-04\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5293/api/book/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5293",
+					"path": [
+						"api",
+						"book",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateByAuthor",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"BookName\": \"Murder on the Orient Express\",\r\n  \"Author\": \"Agatha Christie\",\r\n  \"ReleaseDate\": \"1934-01-01\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5293/api/book/updatebyauthor/Harper%20Lee",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5293",
+					"path": [
+						"api",
+						"book",
+						"updatebyauthor",
+						"Harper%20Lee"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateByBookName",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"BookName\": \"One Hundred Years of Solitude\",\r\n  \"Author\": \"Gabriel García Márquez\",\r\n  \"ReleaseDate\": \"1967-05-30\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5293/api/book/updatebybookname/The%20Hobbit",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5293",
+					"path": [
+						"api",
+						"book",
+						"updatebybookname",
+						"The%20Hobbit"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteByAuthor",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5293/api/book/deletebyauthor/J.D.%20Salinger",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5293",
+					"path": [
+						"api",
+						"book",
+						"deletebyauthor",
+						"J.D.%20Salinger"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteByBookName",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5293/api/book/deletebybookname/Strange%20the%20Dreamer",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5293",
+					"path": [
+						"api",
+						"book",
+						"deletebybookname",
+						"Strange%20the%20Dreamer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteByReleaseDate",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5293/api/book/deletebyreleasedate/1934-01-01",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5293",
+					"path": [
+						"api",
+						"book",
+						"deletebyreleasedate",
+						"1934-01-01"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": [
+			{
+				"key": "password",
+				"value": "pass123",
+				"type": "string"
+			},
+			{
+				"key": "username",
+				"value": "admin",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

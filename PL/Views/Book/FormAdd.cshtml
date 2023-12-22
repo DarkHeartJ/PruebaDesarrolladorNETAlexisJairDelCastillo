@@ -1,0 +1,78 @@
+﻿@model ML.Book
+@{
+    ViewData["Title"] = "FormAdd";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <h2>Agregar un nuevo registro.</h2>
+        </div>
+    </div>
+
+    <hr />
+
+    @using (Html.BeginForm("FormAdd", "Book", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        <div class="row">
+            <div class="col-md-3">
+                @Html.LabelFor(model => model.IdBook, new { @class = "control-label col-md-2" })
+                @Html.TextBoxFor(model => model.IdBook, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.IdBook)
+            </div>
+
+            <div class="col-md-3">
+                @Html.LabelFor(model => model.BookName, new { @class = "control-label col-md-2" })
+                @Html.TextBoxFor(model => model.BookName, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.BookName)
+            </div>
+
+            <div class="col-md-3">
+                @Html.LabelFor(model => model.Author, new { @class = "control-label col-md-2" })
+                @Html.TextBoxFor(model => model.Author, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Author)
+            </div>
+
+            <div class="col-md-3">
+                @Html.LabelFor(model => model.ReleaseDate, new { @class = "control-label col-md-2" })
+                @Html.TextBoxFor(model => model.ReleaseDate, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.ReleaseDate)
+            </div>
+            <div class="col-md-1">
+            </div>
+        </div>
+
+        <br />
+
+        <div class="row">
+            <div class="col-md-2">
+            </div>
+
+            <div class="col-md-2">
+            </div>
+
+            <div class="col-md-2">
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="@ViewBag.Accion" class="btn btn-success" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-2">
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        @Html.ActionLink("Regresar", "GetAll", "Book", htmlAttributes: new { @class = "btn btn-primary" })
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-2">
+            </div>
+
+            <div class="col-md-2">
+            </div>
+        </div>
+    }
+</div>
